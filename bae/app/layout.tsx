@@ -9,9 +9,9 @@ export const metadata: Metadata = {
   title: "From Me to You",
   description: "Coming June 1st, 2026",
   icons: {
-    icon: [{ url: "/favicon.png", type: "image/png" }],
-    shortcut: "/favicon.png",
-    apple: "/favicon.png",
+    icon: [{ url: "/favicon.ico", type: "image/x-icon" }],
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
   },
 };
 
