@@ -1,0 +1,152 @@
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+}
+
+.glassCard {
+  /* Darkened background to make text pop against pastel hydro background */
+  background: rgba(10, 5, 20, 0.4);
+  backdrop-filter: blur(25px);
+  padding: 4rem;
+  border-radius: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  /* Add subtle shadow for depth */
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.subtitleContainer {
+  height: 3rem; /* Fixed height so changing phrases doesn't shift layout */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.subtitle {
+  color: #fff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  margin: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fadeIn {
+  opacity: 1;
+}
+
+.fadeOut {
+  opacity: 0;
+}
+
+.timer {
+  display: flex;
+  gap: 2.5rem;
+  justify-content: center;
+}
+
+.unit {
+  display: flex;
+  flex-direction: column;
+}
+
+.unit span {
+  font-size: 4.5rem;
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  color: #ffffff;
+  /* Stronger text shadow for better legibility against light backgrounds */
+  text-shadow: 0 0 25px rgba(255, 255, 255, 0.5), 0 5px 15px rgba(0, 0, 0, 0.6);
+}
+
+.unit label {
+  font-size: 0.8rem;
+  color: #e2d7f5;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-top: 0.5rem;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.lockedButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  padding: 0.65rem 1.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.06);
+  color: #f5f3ff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: not-allowed;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.lockedButton:disabled {
+  opacity: 0.95;
+}
+
+.lockedIcon {
+  flex-shrink: 0;
+  color: #ffb7b2;
+}
+
+@media (max-width: 768px) {
+  .glassCard {
+    padding: 2.5rem 2rem;
+    width: 85%;
+    max-width: 350px;
+  }
+  
+  .subtitleContainer {
+    height: 4rem; /* More room for wrapping text on mobile */
+    margin-bottom: 1.5rem;
+  }
+  
+  .subtitle {
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+
+  .timer {
+    gap: 1.5rem;
+    /* Reverted to stack vertically as requested */
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  .unit {
+    flex: 1;
+    /* Ensure numbers are centered */
+    align-items: center;
+  }
+
+  .unit span {
+    font-size: 3.5rem;
+  }
+
+  .unit label {
+    font-size: 0.7rem;
+    margin-top: 0;
+  }
+
+  .lockedButton {
+    margin-top: 1.75rem;
+    width: 100%;
+    max-width: 220px;
+  }
+}

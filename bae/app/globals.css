@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+:root {
+  --bg-dark: #110b1a; /* Softened dark plum base */
+  --purple-deep: #2e1065;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: var(--bg-dark);
+  color: #f5f3ff;
+  overflow-x: hidden;
+}
+
+/* Optional: Smooth transitions for the reveal */
+main {
+  transition: opacity 1s ease-in-out;
+}
+
+/* HydroBackground Animations - Fast, Fluid, Swirling Paint Mixing */
+@keyframes hydro-float1 {
+  0% { transform: translate3d(0, 0, 0) scale(1) rotate(0deg); }
+  33% { transform: translate3d(25vw, 35vh, 0) scale(1.4) rotate(90deg); }
+  66% { transform: translate3d(10vw, 55vh, 0) scale(0.9) rotate(180deg); }
+  100% { transform: translate3d(-15vw, 70vh, 0) scale(1.5) rotate(270deg); }
+}
+
+@keyframes hydro-float2 {
+  0% { transform: translate3d(0, 0, 0) scale(1) rotate(0deg); }
+  33% { transform: translate3d(-30vw, -25vh, 0) scale(1.5) rotate(-120deg); }
+  66% { transform: translate3d(15vw, -50vh, 0) scale(0.8) rotate(-240deg); }
+  100% { transform: translate3d(20vw, -15vh, 0) scale(1.4) rotate(-360deg); }
+}
+
+@keyframes hydro-float3 {
+  0% { transform: translate3d(0, 0, 0) scale(1) rotate(0deg); }
+  33% { transform: translate3d(-35vw, 20vh, 0) scale(0.8) rotate(150deg); }
+  66% { transform: translate3d(-20vw, -30vh, 0) scale(1.6) rotate(300deg); }
+  100% { transform: translate3d(-45vw, 15vh, 0) scale(0.9) rotate(450deg); }
+}
+
+@keyframes hydro-float4 {
+  0% { transform: translate3d(0, 0, 0) scale(1) rotate(0deg); }
+  33% { transform: translate3d(40vw, -35vh, 0) scale(1.3) rotate(90deg); }
+  66% { transform: translate3d(20vw, -60vh, 0) scale(0.7) rotate(180deg); }
+  100% { transform: translate3d(50vw, -20vh, 0) scale(1.4) rotate(270deg); }
+}
+
+@keyframes hydro-float5 {
+  0% { transform: translate3d(0, 0, 0) scale(1) rotate(0deg); }
+  25% { transform: translate3d(25vw, 25vh, 0) scale(1.5) rotate(60deg); }
+  50% { transform: translate3d(-15vw, 50vh, 0) scale(0.7) rotate(180deg); }
+  75% { transform: translate3d(35vw, -15vh, 0) scale(1.6) rotate(300deg); }
+  100% { transform: translate3d(10vw, 15vh, 0) scale(0.8) rotate(420deg); }
+}
+
+@keyframes hydro-pulse {
+  0% { opacity: 0.3; }
+  100% { opacity: 0.7; }
+}
