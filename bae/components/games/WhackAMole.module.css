@@ -1,0 +1,143 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 1rem;
+}
+
+.card {
+  width: 100%;
+  max-width: 440px;
+  padding: 1.5rem 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  text-align: center;
+  border: 2px solid #2e1065;
+  box-shadow: 0 12px 32px rgba(46, 16, 101, 0.15);
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 1.25rem 0.75rem;
+  }
+}
+
+.title {
+  font-size: clamp(1.35rem, 5vw, 1.75rem);
+  font-weight: bold;
+  color: #2e1065;
+  margin-bottom: 0.25rem;
+}
+
+.subtitle {
+  color: #5b3a7a;
+  margin-bottom: 1.25rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1.25rem;
+  font-weight: bold;
+  color: #2e1065;
+}
+
+.statValue {
+  font-size: 1.5rem;
+  color: #db2777;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.65rem;
+  margin: 0 auto 1.25rem;
+  width: 100%;
+  max-width: min(92vw, 320px);
+}
+
+.hole {
+  aspect-ratio: 1;
+  min-height: 88px;
+  background: #3d2a54;
+  border-radius: 50%;
+  border: 3px solid #2e1065;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: inset 0 6px 12px rgba(0, 0, 0, 0.35);
+  touch-action: manipulation;
+  padding: 0;
+}
+
+.holeInner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 6%;
+}
+
+.mole {
+  width: 72%;
+  height: 72%;
+  border-radius: 50% 50% 40% 40%;
+  border: 2px solid #2e1065;
+  transform: translateY(110%);
+  transition: transform 0.12s ease-out;
+  overflow: hidden;
+  background: #ffb7b2;
+}
+
+.moleUp {
+  transform: translateY(0);
+}
+
+.moleWhacked {
+  transform: translateY(110%) scale(0.6);
+  opacity: 0.5;
+  transition: transform 0.1s ease-in, opacity 0.1s;
+}
+
+.moleImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.result {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #2e1065;
+  min-height: 1.5rem;
+}
+
+.win {
+  color: #16a34a;
+}
+
+.lose {
+  color: #dc2626;
+}
+
+.startBtn {
+  margin-top: 0.75rem;
+  min-height: 48px;
+  padding: 0.75rem 1.75rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #2e1065;
+  background: #ffb7b2;
+  border: 2px solid #2e1065;
+  border-radius: 999px;
+  cursor: pointer;
+  touch-action: manipulation;
+}

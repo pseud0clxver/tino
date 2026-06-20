@@ -1,15 +1,20 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Gloria_Hallelujah } from "next/font/google";
 import HydroBackground from "../components/backgrounds/HydroBackground";
+import ClientFabsWrapper from "../components/backgrounds/ClientFabsWrapper";
 
-const inter = Inter({ subsets: ["latin"] });
+const gloria = Gloria_Hallelujah({ 
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-gloria"
+});
 
 export const metadata: Metadata = {
   title: "From Me to You",
-  description: "Coming June 1st, 2026",
+  description: "Proposal Website",
   icons: {
-    icon: [{ url: "/favicon.ico", type: "image/x-icon" }],
+    icon: [{ url: "/favicon.ico", type: "image/x-icon", sizes: "any" }],
     shortcut: "/favicon.ico",
     apple: "/favicon.ico",
   },
@@ -22,8 +27,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} relative z-10`}>
+      <body className={`${gloria.variable} font-gloria relative z-10`}>
         <HydroBackground />
+        <ClientFabsWrapper />
         {children}
       </body>
     </html>

@@ -1,0 +1,121 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 1.5rem;
+}
+
+.card {
+  width: 100%;
+  max-width: 420px;
+  padding: 2.5rem 2rem;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 16px;
+  text-align: center;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2e1065;
+  margin-bottom: 2rem;
+}
+
+.pinRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.pinDot {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  border: 2px solid #2e1065;
+  background: transparent;
+  flex-shrink: 0;
+}
+
+.pinDotFilled {
+  background: #2e1065;
+}
+
+.pinDotError {
+  background: #ef4444;
+  border-color: #ef4444;
+  animation: pulse 1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem 1.25rem;
+  justify-items: center;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 320px;
+}
+
+.keyWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 88px;
+  height: 88px;
+  padding: 0.5rem;
+}
+
+.keyWrapper wired-button {
+  width: 100%;
+  height: 100%;
+  min-width: 72px;
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.keyWrapperEmpty {
+  width: 88px;
+  height: 88px;
+}
+
+.error {
+  margin-top: 1.5rem;
+  color: #ef4444;
+  font-weight: bold;
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 2rem 1.25rem;
+    max-width: 100%;
+  }
+
+  .keypad {
+    gap: 0.75rem 1rem;
+    max-width: 280px;
+  }
+
+  .keyWrapper,
+  .keyWrapperEmpty {
+    width: 76px;
+    height: 76px;
+  }
+
+  .keyWrapper wired-button {
+    min-width: 64px;
+    min-height: 64px;
+    font-size: 1.25rem;
+  }
+}

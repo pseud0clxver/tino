@@ -1,7 +1,11 @@
 @import "tailwindcss";
 
+@theme {
+  --font-gloria: var(--font-gloria), sans-serif;
+}
+
 :root {
-  --bg-dark: #110b1a; /* Softened dark plum base */
+  --bg-dark: #eadef7; /* Light purple pastel */
   --purple-deep: #2e1065;
 }
 
@@ -13,8 +17,9 @@
 
 body {
   background: var(--bg-dark);
-  color: #f5f3ff;
+  color: #333333;
   overflow-x: hidden;
+  font-family: var(--font-gloria), sans-serif;
 }
 
 /* Optional: Smooth transitions for the reveal */

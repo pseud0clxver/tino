@@ -1,34 +1,27 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 
 function useMediaQuery(query: string) {
-  const [matches, setMatches] = useState(false);
-
-  useEffect(() => {
+  const subscribe = (callback: () => void) => {
     const media = window.matchMedia(query);
-    if (media.matches !== matches) {
-      setMatches(media.matches);
-    }
-    const listener = () => setMatches(media.matches);
-    media.addEventListener("change", listener);
-    return () => media.removeEventListener("change", listener);
-  }, [matches, query]);
+    media.addEventListener("change", callback);
+    return () => media.removeEventListener("change", callback);
+  };
 
-  return matches;
+  return useSyncExternalStore(
+    subscribe,
+    () => window.matchMedia(query).matches,
+    () => false
+  );
 }
 
 export default function HydroBackground() {
   const isMobile = useMediaQuery("(max-width: 768px)");
   const prefersReducedMotion = useMediaQuery("(prefers-reduced-motion: reduce)");
 
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
-
-  if (!mounted) return null;
-
   return (
-    <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none bg-[#110b1a]">
+    <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none bg-[#eadef7]">
       {/* Background base noise/texture if performance allows */}
       <div 
         className="absolute inset-0 mix-blend-overlay pointer-events-none opacity-[0.05]" 

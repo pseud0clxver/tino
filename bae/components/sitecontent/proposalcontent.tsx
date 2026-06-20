@@ -1,16 +1,16 @@
-import Hero from "./hero";
-import Gallery from "./gallery";
+import InfiniteCarousel from "./InfiniteCarousel";
+import CountUpTimer from "../countdown/CountUpTimer";
 
-const ProposalContent: React.FC = () => {
+interface Props {
+  targetDate: string;
+  onProceed: () => void;
+}
+
+const ProposalContent: React.FC<Props> = ({ targetDate, onProceed }) => {
   return (
-    <div style={{ background: "#0f172a", minHeight: "100vh" }}>
-      <Hero />
-      <Gallery />
-      <footer
-        style={{ padding: "100px", textAlign: "center", color: "#a78bfa" }}
-      >
-        Forever starts now.
-      </footer>
+    <div className="relative min-h-screen bg-transparent">
+      <CountUpTimer startDate={targetDate} isFixed={false} />
+      <InfiniteCarousel onProceed={onProceed} />
     </div>
   );
 };
