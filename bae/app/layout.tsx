@@ -12,7 +12,7 @@ const gloria = Gloria_Hallelujah({
 
 export const metadata: Metadata = {
   title: "From Me to You",
-  description: "Proposal Website",
+  description: "From beginning till end",
   icons: {
     icon: [{ url: "/favicon.ico", type: "image/x-icon", sizes: "any" }],
     shortcut: "/favicon.ico",
