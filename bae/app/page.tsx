@@ -38,7 +38,7 @@ export default function Home() {
     "proposal",
   ].includes(appState);
 
-  const targetDate = "2026-06-20T00:00:00";
+  const targetDate = "2026-06-21T12:00:00";
 
   return (
     <main>
