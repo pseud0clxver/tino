@@ -19,9 +19,9 @@
   position: relative;
   max-width: min(94vw, 440px);
   width: 100%;
-  height: auto;
+  height: min(68dvh, 560px);
+  min-height: min(62dvh, 480px);
   max-height: calc(100dvh - var(--screen-padding) * 2 - 1rem);
-  min-height: 0;
   background: #f7effc;
   border-radius: 12px 24px 24px 12px;
   border: 2px solid #2e1065;
@@ -228,6 +228,8 @@
 
 @media (max-width: 768px) {
   .book {
+    height: min(72dvh, 520px);
+    min-height: min(66dvh, 420px);
     max-height: calc(100dvh - var(--screen-padding) * 2);
     padding: 1.5rem 1.25rem;
   }
@@ -240,6 +242,8 @@
 
 @media (max-width: 480px) {
   .book {
+    height: min(74dvh, 480px);
+    min-height: min(68dvh, 380px);
     padding: 1.25rem 1rem;
     border-left-width: 8px;
   }

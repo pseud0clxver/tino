@@ -178,13 +178,15 @@ export default function PicturePuzzle({ onComplete }: { onComplete: () => void }
             <div className={styles.starburst}></div>
             <div className={styles.glare}></div>
           </div>
-          <div className={styles.packCard}>
-            <Image src={PUZZLE_IMAGE} alt="Completed puzzle" fill className={styles.packImg} unoptimized />
+          <div className={styles.packContent}>
+            <div className={styles.packHeader}>Who&apos;s that pokémon?</div>
+            <div className={styles.packCard}>
+              <Image src={PUZZLE_IMAGE} alt="Completed puzzle" fill className={styles.packImg} unoptimized />
+            </div>
+            <button className={styles.packButton} onClick={onComplete} aria-label="Tap to open">
+              Proceed
+            </button>
           </div>
-          <div className={styles.packHeader}>Who&apos;s that pokémon?</div>
-          <button className={styles.packButton} onClick={onComplete} aria-label="Tap to open">
-            Proceed
-          </button>
         </div>
       )}
     </div>
