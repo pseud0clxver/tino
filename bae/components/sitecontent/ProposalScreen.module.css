@@ -3,32 +3,35 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  min-height: 100dvh;
-  padding: 1rem;
+  height: 100dvh;
+  max-height: 100dvh;
+  padding: var(--screen-padding);
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   width: 100%;
   border: none;
   background: transparent;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .book {
   position: relative;
-  max-width: 480px;
+  max-width: min(94vw, 440px);
   width: 100%;
-  height: 60vh;
-  min-height: 400px;
+  height: auto;
+  max-height: calc(100dvh - var(--screen-padding) * 2 - 1rem);
+  min-height: 0;
   background: #f7effc;
   border-radius: 12px 24px 24px 12px;
   border: 2px solid #2e1065;
-  border-left: 12px solid #5b3a7a;
+  border-left: 10px solid #5b3a7a;
   box-shadow: 
     0 16px 40px rgba(46, 16, 101, 0.2),
     inset -10px 0 20px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
-  padding: 3rem 2.5rem;
+  padding: 2rem 1.75rem;
   margin: 0 auto;
   overflow: hidden;
 }
@@ -119,6 +122,9 @@
   position: relative;
   z-index: 10;
   animation: flipIn 0.5s ease-out;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  min-height: 0;
 }
 
 .message {
@@ -201,10 +207,10 @@
 
 .fixBtn {
   align-self: center;
-  margin-top: 2rem;
-  min-height: 52px;
-  padding: 0 2rem;
-  font-size: 1.1rem;
+  margin-top: 1.25rem;
+  min-height: 42px;
+  padding: 0 1.35rem;
+  font-size: 0.92rem;
   font-weight: bold;
   color: #fff;
   background: #db2777;
@@ -222,13 +228,43 @@
 
 @media (max-width: 768px) {
   .book {
-    height: 65vh;
+    max-height: calc(100dvh - var(--screen-padding) * 2);
+    padding: 1.5rem 1.25rem;
+  }
+
+  .heart {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
   }
 }
 
 @media (max-width: 480px) {
   .book {
-    padding: 2rem 1.5rem;
-    height: 70vh;
+    padding: 1.25rem 1rem;
+    border-left-width: 8px;
+  }
+
+  .hint,
+  .prevBtn {
+    bottom: 0.85rem;
+    font-size: 0.72rem;
+  }
+
+  .prevBtn {
+    left: 1rem;
+  }
+
+  .hint {
+    right: 1rem;
+  }
+
+  .message {
+    font-size: clamp(1rem, 4.5vw, 1.35rem);
+  }
+
+  .fixBtn {
+    min-height: 38px;
+    font-size: 0.85rem;
+    padding: 0 1.1rem;
   }
 }

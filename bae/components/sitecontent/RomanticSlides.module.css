@@ -3,11 +3,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  min-height: 100dvh;
+  height: 100dvh;
+  max-height: 100dvh;
   width: 100%;
-  padding: 1rem 1rem 2rem;
+  padding: var(--screen-padding);
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .slide {
@@ -15,9 +16,10 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 480px;
+  max-width: min(94vw, 440px);
   flex: 1;
   justify-content: center;
+  min-height: 0;
   animation: fadeIn 0.5s ease;
 }
 
@@ -28,19 +30,19 @@
 
 .imageWrap {
   width: 100%;
-  max-height: min(62dvh, 520px);
-  border-radius: 14px;
+  max-height: min(52dvh, 420px);
+  border-radius: 12px;
   overflow: hidden;
   border: 2px solid #2e1065;
   box-shadow: 0 12px 36px rgba(46, 16, 101, 0.2);
   background: #fff;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .image {
   width: 100%;
   height: auto;
-  max-height: min(62dvh, 520px);
+  max-height: min(52dvh, 420px);
   object-fit: contain;
   display: block;
 }

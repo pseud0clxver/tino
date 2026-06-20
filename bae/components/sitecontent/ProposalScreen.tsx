@@ -69,21 +69,87 @@ export default function ProposalScreen({ onFixTimer }: { onFixTimer: () => void 
   const isLastPage = page === PAGES.length;
 
   return (
-    <div className={styles.container} onClick={handleNext} role="button" tabIndex={0} aria-label="Next page">
-      <div className={styles.book} onClick={(e) => {
-        e.stopPropagation();
-        handleNext();
-      }}>
+    <div
+      className={styles.container}
+      onClick={handleNext}
+      role="button"
+      tabIndex={0}
+      aria-label="Next page"
+    >
+      <div
+        className={styles.book}
+        onClick={(e) => {
+          e.stopPropagation();
+          handleNext();
+        }}
+      >
         {/* Faint background graphics */}
         <div className={styles.bookBackground}>
           <div className={styles.squiggleBg}></div>
-          <svg className={styles.bgIcon1} viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" /></svg>
-          <svg className={styles.bgIcon2} viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="5" y1="19" x2="19" y2="5" /><polyline points="10 5 19 5 19 14" /><path d="M5 19l-2 2" /><circle cx="6" cy="18" r="2" /></svg>
-          <svg className={styles.bgIcon3} viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" /></svg>
-          <svg className={styles.bgIcon4} viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" /></svg>
-          <svg className={styles.bgIcon5} viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="3" /><path d="M12 15c-3.5 0-6-2.5-6-6s2.5-6 6-6 6 2.5 6 6-2.5 6-6 6z" /><path d="M12 21v-6" /></svg>
-          <svg className={styles.bgIcon6} viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="5" y1="19" x2="19" y2="5" /><polyline points="10 5 19 5 19 14" /><path d="M5 19l-2 2" /><circle cx="6" cy="18" r="2" /></svg>
-          <svg className={styles.bgIcon7} viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" /></svg>
+          <svg
+            className={styles.bgIcon1}
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+          >
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+          </svg>
+          <svg
+            className={styles.bgIcon2}
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+          >
+            <line x1="5" y1="19" x2="19" y2="5" />
+            <polyline points="10 5 19 5 19 14" />
+            <path d="M5 19l-2 2" />
+            <circle cx="6" cy="18" r="2" />
+          </svg>
+          <svg
+            className={styles.bgIcon3}
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+          >
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+          </svg>
+          <svg
+            className={styles.bgIcon4}
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+          >
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+          </svg>
+          <svg
+            className={styles.bgIcon5}
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+          >
+            <circle cx="12" cy="12" r="3" />
+            <path d="M12 15c-3.5 0-6-2.5-6-6s2.5-6 6-6 6 2.5 6 6-2.5 6-6 6z" />
+            <path d="M12 21v-6" />
+          </svg>
+          <svg
+            className={styles.bgIcon6}
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+          >
+            <line x1="5" y1="19" x2="19" y2="5" />
+            <polyline points="10 5 19 5 19 14" />
+            <path d="M5 19l-2 2" />
+            <circle cx="6" cy="18" r="2" />
+          </svg>
+          <svg
+            className={styles.bgIcon7}
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+          >
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+          </svg>
         </div>
 
         <div key={page} className={styles.pageContent}>
@@ -105,11 +171,15 @@ export default function ProposalScreen({ onFixTimer }: { onFixTimer: () => void 
           {isLastPage && (
             <>
               <p className={styles.message}>
-                <TypewriterText text="Expect me at your door idk what for but expect me" />
+                <TypewriterText text="Only a little longer Big Daddy Alpha, Dada Clxver is on his way" />
               </p>
-              <p className={styles.signature}>From one GOAT to another,<br/>Love Clxver ♥</p>
-              <button 
-                className={styles.fixBtn} 
+              <p className={styles.signature}>
+                From one GOAT to another,
+                <br />
+                Love Clxver ♥
+              </p>
+              <button
+                className={styles.fixBtn}
                 onClick={(e) => {
                   e.stopPropagation();
                   onFixTimer();
@@ -120,9 +190,13 @@ export default function ProposalScreen({ onFixTimer }: { onFixTimer: () => void 
             </>
           )}
         </div>
-        
+
         {page > 0 && (
-          <button className={styles.prevBtn} onClick={handlePrev} aria-label="Previous page">
+          <button
+            className={styles.prevBtn}
+            onClick={handlePrev}
+            aria-label="Previous page"
+          >
             ← Back
           </button>
         )}
